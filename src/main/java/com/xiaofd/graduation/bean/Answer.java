@@ -1,12 +1,21 @@
 package com.xiaofd.graduation.bean;
 
+import io.swagger.annotations.ApiModelProperty;
+import org.hibernate.validator.constraints.Range;
+
 import java.io.Serializable;
 
+
 public class Answer implements Serializable {
+    @Range(min = 1, max = 2147483647, message = "答案编号范围在1到2147483647之间")
+    @ApiModelProperty(value = "答案编号",required = true)
     private Integer id;
 
+    @ApiModelProperty(value = "答案内容")
     private String answer;
 
+    @Range(min = 1, max = 2147483647, message = "评审编号范围在1到2147483647之间")
+    @ApiModelProperty(value = "评审编号")
     private Integer assessId;
 
     private static final long serialVersionUID = 1L;

@@ -4,14 +4,12 @@ import io.swagger.annotations.ApiModelProperty;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Range;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 public class Student implements Serializable {
-    @Range(min = 1, max = 2147483647, message = "编号范围在1到2147483647之间")
+    @Range(min = 1, max = 2147483647, message = "学生编号范围在1到2147483647之间")
     @ApiModelProperty(value = "学生id", required = true)
     private Integer id;
 

@@ -1,12 +1,14 @@
 package com.xiaofd.graduation.web.controller.Student_Lcm;
 
 import com.xiaofd.graduation.bean.Student;
+import com.xiaofd.graduation.service.IStudentService;
 import com.xiaofd.graduation.util.Message;
 import com.xiaofd.graduation.util.MessageUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -21,6 +23,9 @@ import java.util.List;
 @Api(description = "学生信息")
 public class StudentController {
 
+    @Autowired
+    IStudentService studentService;
+
     @PostMapping("/学生信息管理")
     @ApiOperation(value = "学生信息管理")
 //    @ApiImplicitParams({
@@ -33,8 +38,8 @@ public class StudentController {
 //            @ApiImplicitParam(name = "email", value = "学生邮箱",  paramType = "query", dataType = "varchar"),
 //            @ApiImplicitParam(name = "qq", value = "学生QQ",  paramType = "query", dataType = "varchar")
 //    })
-    public Message student(@RequestBody @Validated  Student student){
-        return MessageUtil.success("学生信息填写成功");
+    public Message insterStudent(@RequestBody @Validated Student student) {
+        return MessageUtil.success(studentService.insertStudent(student));
     }
 
 }

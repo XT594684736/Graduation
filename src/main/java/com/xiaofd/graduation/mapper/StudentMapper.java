@@ -4,7 +4,9 @@ import com.xiaofd.graduation.bean.Student;
 import com.xiaofd.graduation.bean.StudentExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface StudentMapper {
     long countByExample(StudentExample example);
 
