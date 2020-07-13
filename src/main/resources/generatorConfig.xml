@@ -59,7 +59,8 @@
         <table tableName="qqn"  domainObjectName="Qqn"></table>
         <table tableName="assess"  domainObjectName="Assess"></table>
         <table tableName="answer"  domainObjectName="Answer"></table>
-
+        <table tableName="login"  domainObjectName="Login"></table>
+        <table tableName="display"  domainObjectName="Display"></table>
 
     </context>
 </generatorConfiguration>
